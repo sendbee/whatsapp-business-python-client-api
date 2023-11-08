@@ -1,24 +1,35 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import TextField, JsonField
+from whatsapp_business_api.fields import TextField, ModelField, JsonField
+
+
+class Contact(Model):
+    """Data model for message contact"""
+
+    _input = TextField(
+        index='input', desc='The customer phone number that the message '
+                            'was sent to. This may not match wa_id.'
+    )
+    _id = TextField(
+        index='wa_id', desc='WhatsApp ID of the customer who the message '
+                            'was sent to. This may not match input.'
+    )
+
+
+class Message(Model):
+    """Data model for message"""
+
+    _id = TextField(
+        index='id', desc='WhatsApp message ID. You can use the ID listed '
+                         'after "wamid." to track your message status'
+    )
 
 
 class SendMessageResponse(Model):
     """Data model for sent message"""
 
-    _status = TextField(index='status', desc='Message status')
-    _message = TextField(index='message', desc='Fail message')
-    _invalid_constraint_information = JsonField(
-        index='invalidConstraintInformation', desc='Invalid message'
+    _messaging_product = TextField(
+        index='messaging_product', desc='Messaging product'
     )
-    _message_id = TextField(index='messageId', desc='Message UUID')
-
-
-class MessageSeenResponse(Model):
-    """Data model for message seen"""
-
-    _status = TextField(index='status', desc='Message status')
-    _message = TextField(index='message', desc='Fail message')
-    _invalid_constraint_information = JsonField(
-        index='invalidConstraintInformation', desc='Invalid message'
-    )
-    _message_id = TextField(index='messageId', desc='Message UUID')
+    _contacts = ModelField(Contact, index='contacts', desc='Contacts models')
+    _messages = ModelField(Message, index='messages', desc='Messages models')
+    _error = JsonField(index='error', desc='Error model')
