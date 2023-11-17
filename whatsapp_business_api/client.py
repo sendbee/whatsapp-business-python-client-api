@@ -1,10 +1,11 @@
 import click
 
 from whatsapp_business_api.auth.client import Auth
+from whatsapp_business_api.account.client import Account
 from whatsapp_business_api.messaging.client import Messaging
 
 
-class Client(Auth, Messaging):
+class Client(Auth, Account, Messaging):
     """Main API class. Sets all API calls."""
 
     base_url = 'graph.facebook.com'
