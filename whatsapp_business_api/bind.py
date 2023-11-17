@@ -228,7 +228,7 @@ def bind_request(**request_data):
 
             headers = {
                 **self.__class__.header,
-                'User-Agent': 'Gupshup Python API Client'
+                'User-Agent': 'Meta Python API Client'
             }
             if self.client.api_key:
                 headers = {

@@ -30,7 +30,7 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
     ],
-    keywords='gupshup api python',
+    keywords='Meta WhatsApp api python',
 
     packages=find_packages(),
     install_requires=[
