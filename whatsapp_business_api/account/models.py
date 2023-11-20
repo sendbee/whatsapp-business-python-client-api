@@ -36,6 +36,17 @@ class BusinessAccount(Model):
         NumberData, index='phone_numbers', desc='Phone numbers')
 
 
+class WabaAccount(Model):
+    """Data model for WABA account"""
+
+    _id = TextField(index='id', desc='Account ID')
+    _name = TextField(index='name', desc='Account name')
+    _currency = TextField(index='currency', desc='Currency')
+    _timezone_id = TextField(index='timezone_id', desc='Timezone ID')
+    _message_template_namespace = TextField(
+        index='message_template_namespace', desc='Message template namespace')
+
+
 class RegisterAccount(Model):
     """Data model for register account"""
 
