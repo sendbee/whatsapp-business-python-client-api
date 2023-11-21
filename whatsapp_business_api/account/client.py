@@ -21,7 +21,7 @@ class Account:
     waba_details = bind_request(
         method=constants.RequestConst.GET,
         api_path='/v18.0/<account_id>',
-        query_parameters=query_params.AccountIdMsgIdInURL,
+        query_parameters=query_params.AccountFields,
         model=WabaAccount,
         description='Get WABA account',
         force_single_model_response=True,
@@ -31,7 +31,7 @@ class Account:
     number_details = bind_request(
         method=constants.RequestConst.GET,
         api_path='/v18.0/<account_id>',
-        query_parameters=query_params.AccountIdMsgIdInURL,
+        query_parameters=query_params.AccountFields,
         model=Number,
         force_single_model_response=True,
         description='Get WABA number details',

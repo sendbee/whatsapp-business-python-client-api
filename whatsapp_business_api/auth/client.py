@@ -13,5 +13,6 @@ class Auth:
         query_parameters=query_params.OauthToken,
         model=OauthToken,
         description='Get partner API token',
+        force_single_model_response=True,
         payload_format=constants.RequestConst.PARAMS_URL_ENCODED
     )

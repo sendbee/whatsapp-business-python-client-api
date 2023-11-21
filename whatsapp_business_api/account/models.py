@@ -11,6 +11,8 @@ class Number(Model):
         index='code_verification_status', desc='Code verification status')
     _display_phone_number = TextField(
         index='display_phone_number', desc='Display phone number')
+    _messaging_limit_tier = TextField(
+        index='messaging_limit_tier', desc='Messaging limit tier')
     _quality_rating = TextField(
         index='quality_rating', desc='Quality rating')
     _platform_type = TextField(
