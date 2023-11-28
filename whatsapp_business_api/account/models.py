@@ -1,5 +1,5 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import TextField, ModelField
+from whatsapp_business_api.fields import TextField, ModelField, JsonField
 
 
 class Number(Model):
