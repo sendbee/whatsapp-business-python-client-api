@@ -18,6 +18,14 @@ class GetMessageTemplate(QueryParams):
                      'you want returned in each page of results.'
 
 
+class GetMessageTemplateById(QueryParams):
+    """Query parameters for getting message template by id"""
+
+    access_token = 'access_token', 'oAuth access token'
+    template_id = 'template_id', 'Template ID'
+    fields = 'fields', 'Optional. List of template fields you want returned.'
+
+
 class AccountIdInURL(QueryParams):
     """Url parameters for account id"""
 

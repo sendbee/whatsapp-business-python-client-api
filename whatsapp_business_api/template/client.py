@@ -2,7 +2,8 @@ from whatsapp_business_api import constants
 from whatsapp_business_api.bind import bind_request
 from whatsapp_business_api.template import query_params
 from whatsapp_business_api.template.models import \
-    MessageTemplateList, CreatedMessageTemplate, DeletedMessageTemplate
+    MessageTemplateList, CreatedMessageTemplate, DeletedMessageTemplate, \
+    MessageTemplate
 
 
 class Template:
@@ -14,6 +15,16 @@ class Template:
         query_parameters=query_params.GetMessageTemplate,
         model=MessageTemplateList,
         description='Get message templates',
+        force_single_model_response=True,
+        payload_format=constants.RequestConst.PARAMS_URL_ENCODED
+    )
+
+    get_message_template_by_id = bind_request(
+        method=constants.RequestConst.GET,
+        api_path='/v18.0/<template_id>',
+        query_parameters=query_params.GetMessageTemplateById,
+        model=MessageTemplate,
+        description='Get message template by id',
         force_single_model_response=True,
         payload_format=constants.RequestConst.PARAMS_URL_ENCODED
     )

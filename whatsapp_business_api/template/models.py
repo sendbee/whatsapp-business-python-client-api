@@ -32,8 +32,14 @@ class MessageTemplate(Model):
     _name = TextField(index='name', desc='Template name')
     _language = TextField(index='language', desc='Template language')
     _category = TextField(index='category', desc='Template category')
+    _sub_category = TextField(
+        index='sub_category', desc='Template sub category')
     _status = TextField(index='status', desc='Template status')
     _id = TextField(index='id', desc='Template id')
+    _quality_score = JsonField(
+        index='quality_score', desc='Template quality score')
+    _rejected_reason = TextField(
+        index='rejected_reason', desc='Template rejected reason')
     _components = ModelField(
         Component, index='components', desc='Template components')
 
@@ -41,7 +47,8 @@ class MessageTemplate(Model):
 class MessageTemplateList(Model):
     """Data model for message template list"""
 
-    _data = ModelField(MessageTemplate, index='data', desc='List of message templates')
+    _data = ModelField(
+        MessageTemplate, index='data', desc='List of message templates')
     _paging = ModelField(Paging, index='paging', desc='Paging information')
 
 
