@@ -1,5 +1,6 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import TextField, ModelField, JsonField
+from whatsapp_business_api.fields import \
+    TextField, ModelField, JsonField, DictField
 
 
 class Cursors(Model):
@@ -36,7 +37,7 @@ class MessageTemplate(Model):
         index='sub_category', desc='Template sub category')
     _status = TextField(index='status', desc='Template status')
     _id = TextField(index='id', desc='Template id')
-    _quality_score = JsonField(
+    _quality_score = DictField(
         index='quality_score', desc='Template quality score')
     _rejected_reason = TextField(
         index='rejected_reason', desc='Template rejected reason')

@@ -83,7 +83,7 @@ class JsonField(Field):
         try:
             return ujson.loads(data)
         except ValueError:
-            return ''
+            return data
 
 
 class BooleanField(Field):
@@ -129,6 +129,18 @@ class ListField(Field):
 
         try:
             return list(data)
+        except ValueError:
+            return data
+
+
+class DictField(Field):
+    """Converting item to dict."""
+
+    def _convert_field_item(self, data, **kwargs):
+        """Actual converting."""
+
+        try:
+            return dict(data)
         except ValueError:
             return data
 
