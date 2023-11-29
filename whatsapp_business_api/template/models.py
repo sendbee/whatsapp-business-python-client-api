@@ -1,6 +1,6 @@
 from whatsapp_business_api.models import Model
 from whatsapp_business_api.fields import \
-    TextField, ModelField, JsonField, DictField
+    TextField, ModelField, JsonField, DictField, ListField
 
 
 class Cursors(Model):
@@ -24,7 +24,7 @@ class Component(Model):
     _format = TextField(index='format', desc='Component format')
     _text = TextField(index='text', desc='Component text')
     _example = DictField(index='example', desc='Component example')
-    _buttons = DictField(index='buttons', desc='Component buttons')
+    _buttons = ListField(index='buttons', desc='Component buttons')
 
 
 class MessageTemplate(Model):
