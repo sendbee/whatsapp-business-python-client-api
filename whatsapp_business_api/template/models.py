@@ -23,8 +23,8 @@ class Component(Model):
     _type = TextField(index='type', desc='Component type')
     _format = TextField(index='format', desc='Component format')
     _text = TextField(index='text', desc='Component text')
-    _example = JsonField(index='example', desc='Component example')
-    _buttons = JsonField(index='buttons', desc='Component buttons')
+    _example = DictField(index='example', desc='Component example')
+    _buttons = DictField(index='buttons', desc='Component buttons')
 
 
 class MessageTemplate(Model):
