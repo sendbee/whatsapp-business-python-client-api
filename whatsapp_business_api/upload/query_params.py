@@ -10,6 +10,7 @@ class AccountIdInURL(QueryParams):
 class UploadSession(QueryParams):
     """Query parameters for starting an upload session"""
 
+    account_id = 'account_id', 'Account ID'
     file_length = 'file_length', 'Required. The length of the file in bytes.'
     file_type = 'file_type', 'Required. The type of file being uploaded.' \
                              'Valid values are: application/pdf, image/jpeg, ' \

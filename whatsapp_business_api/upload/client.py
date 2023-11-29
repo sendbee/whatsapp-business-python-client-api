@@ -10,7 +10,7 @@ class Upload:
     create_upload_session = bind_request(
         method=constants.RequestConst.POST,
         api_path='/v18.0/<account_id>/uploads',
-        url_parameters=query_params.AccountIdInURL,
+        url_parameters=query_params.UploadSession,
         model=UploadSession,
         description='Start upload session',
         force_single_model_response=True,
