@@ -69,6 +69,9 @@ def bind_request(**request_data):
         file_parameters = request_data.get(
             constants.RequestConst.FILE_PARAMETERS
         )
+        file_to_data_parameter = request_data.get(
+            constants.RequestConst.FILE_TO_DATA_PARAMETER
+        )
         fake_response_path = request_data.get(
             constants.TestConst.FAKE_RESPONSE_PATH
         )
@@ -308,6 +311,10 @@ def bind_request(**request_data):
                 if self.parameters[constants.RequestConst.FILE]:
                     files = self.parameters[constants.RequestConst.FILE]
                 else:
+                    files = None
+
+                if self.file_to_data_parameter:
+                    payload = files[self.file_to_data_parameter]
                     files = None
 
                 if True:  # with audit('actual request'):

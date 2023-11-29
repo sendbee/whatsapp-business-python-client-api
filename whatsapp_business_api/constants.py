@@ -30,6 +30,7 @@ class RequestConst(Const):
     QUERY_PARAMETERS = 'query_parameters'
     DEFAULT_PARAMETERS = 'default_parameters'
     PARAMS_URL_ENCODED = 'params_url_encoded'
+    FILE_TO_DATA_PARAMETER = 'file_to_data_parameter'
 
 
 class StatusConst(Const):
