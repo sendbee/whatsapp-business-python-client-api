@@ -1,7 +1,8 @@
 from whatsapp_business_api import constants
 from whatsapp_business_api.bind import bind_request
-from whatsapp_business_api.upload import query_params
-from whatsapp_business_api.upload.models import UploadSession, UploadFile
+from whatsapp_business_api.media import query_params
+from whatsapp_business_api.media.models import \
+    UploadSession, UploadFile, MediaFile
 
 
 class Upload:
@@ -29,4 +30,13 @@ class Upload:
         description='Start file upload',
         force_single_model_response=True,
         payload_format=constants.RequestConst.PARAMS_URL_ENCODED
+    )
+
+    get_media = bind_request(
+        method=constants.RequestConst.GET,
+        api_path='/v18.0/<media_id>',
+        model=MediaFile,
+        force_single_model_response=True,
+        query_parameters=query_params.MediaIdInURL,
+        description='Get media file'
     )

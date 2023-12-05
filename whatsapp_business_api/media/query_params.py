@@ -7,6 +7,12 @@ class AccountIdInURL(QueryParams):
     account_id = 'account_id', 'Account ID'
 
 
+class MediaIdInURL(QueryParams):
+    """Url parameters for account id"""
+
+    media_id = 'media_id', 'Media ID'
+
+
 class UploadSession(QueryParams):
     """Query parameters for starting an upload session"""
 

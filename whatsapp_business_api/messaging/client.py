@@ -19,6 +19,7 @@ class Messaging:
         },
         description='Send a WhatsApp message'
     )
+
     send_template_message = bind_request(
         method=constants.RequestConst.POST,
         api_path='/v18.0/<app_id>/messages',

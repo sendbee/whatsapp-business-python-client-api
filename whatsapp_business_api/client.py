@@ -1,7 +1,7 @@
 import click
 
 from whatsapp_business_api.auth.client import Auth
-from whatsapp_business_api.upload.client import Upload
+from whatsapp_business_api.media.client import Upload
 from whatsapp_business_api.account.client import Account
 from whatsapp_business_api.webhook.client import Webhook
 from whatsapp_business_api.template.client import Template
