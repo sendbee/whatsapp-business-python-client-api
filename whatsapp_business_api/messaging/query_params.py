@@ -14,6 +14,7 @@ class SendMessage(QueryParams):
                      'image message, video for a video message, etc.)'
     document = 'document', 'Document message'
     video = 'video', 'Video message contents'
+    audio = 'audio', 'Audio message contents'
     sticker = 'sticker', 'Sticker message contents'
     location = 'location', 'Location message contents'
     contacts = 'contacts', 'Contacts message contents'
