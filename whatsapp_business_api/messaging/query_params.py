@@ -12,6 +12,9 @@ class SendMessage(QueryParams):
     image = 'image', 'Media message contents. The property name should match ' \
                      'the type of media message you are sending (image for an ' \
                      'image message, video for a video message, etc.)'
+    document = 'document', 'Document message'
+    video = 'video', 'Video message contents'
+    sticker = 'sticker', 'Sticker message contents'
     location = 'location', 'Location message contents'
     contacts = 'contacts', 'Contacts message contents'
     interactive = 'interactive', 'Interactive message contents'
