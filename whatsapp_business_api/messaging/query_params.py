@@ -19,6 +19,8 @@ class SendMessage(QueryParams):
     location = 'location', 'Location message contents'
     contacts = 'contacts', 'Contacts message contents'
     interactive = 'interactive', 'Interactive message contents'
+    context = 'context', 'An object containing the ID of a ' \
+                         'previous message you are replying to.'
 
 
 class SendTemplateMessage(QueryParams):
