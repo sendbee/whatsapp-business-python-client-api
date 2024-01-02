@@ -1,5 +1,5 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import TextField, ModelField, JsonField
+from whatsapp_business_api.fields import TextField, JsonField, ListField
 
 
 class MetaApp(Model):
@@ -11,7 +11,7 @@ class MetaApp(Model):
 class Apps(Model):
     """Data model for Meta apps"""
 
-    _data = ModelField(MetaApp, index='data', desc='List of apps')
+    _data = ListField(index='data', desc='List of apps')
 
 
 class Success(Model):
