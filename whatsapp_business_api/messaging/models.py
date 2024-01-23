@@ -33,3 +33,9 @@ class SendMessageResponse(Model):
     _contacts = ModelField(Contact, index='contacts', desc='Contacts models')
     _messages = ModelField(Message, index='messages', desc='Messages models')
     _error = JsonField(index='error', desc='Error model')
+
+
+class ChangeMessageStatus(Model):
+    """Data model for change message status"""
+
+    _success = TextField(index='success', desc='Success')

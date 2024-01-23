@@ -34,3 +34,16 @@ class AppIdMsgIdInURL(QueryParams):
     """URL Parameters for app_id and msg_id in url"""
 
     app_id = 'app_id', 'Phone number ID'
+
+
+class PhoneNumberIdInURL(QueryParams):
+    """URL Parameters for phone_number_id in url"""
+
+    phone_number_id = 'phone_number_id', 'Phone number ID'
+
+
+class MessageStatus(QueryParams):
+    """Parameters for changing WhatsApp message status"""
+
+    status = 'status', 'Message status'
+    message_id = 'message_id', 'Message ID'
