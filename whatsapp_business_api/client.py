@@ -6,12 +6,12 @@ from whatsapp_business_api.account.client import Account
 from whatsapp_business_api.webhook.client import Webhook
 from whatsapp_business_api.template.client import Template
 from whatsapp_business_api.messaging.client import Messaging
-from whatsapp_business_api.credit_line.client import CreditLine
+# from whatsapp_business_api.credit_line.client import CreditLine
 from whatsapp_business_api.business_profile.client import BusinessProfiles
 
 
 class Client(Auth, Account, Messaging, Template, Upload, Webhook,
-             BusinessProfiles, CreditLine):
+             BusinessProfiles):#, CreditLine):
     """Main API class. Sets all API calls."""
 
     base_url = 'graph.facebook.com'
