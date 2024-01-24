@@ -1,6 +1,6 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import JsonField, ModelField, TextField, \
-    BooleanField
+from whatsapp_business_api.fields import ModelField, TextField, \
+    BooleanField, ListField
 
 
 class BusinessProfileData(Model):
@@ -36,7 +36,7 @@ class BusinessProfileData(Model):
                                'EVENT_PLAN, FINANCE, GROCERY, GOVT, HOTEL, '
                                'HEALTH, NONPROFIT, PROF_SERVICES, RETAIL, '
                                'TRAVEL, RESTAURANT, NOT_A_BIZ')
-    websites = JsonField(
+    _websites = ListField(
         index='websites', desc='Optional. The URLs associated with the '
                                'business. For instance, a website, Facebook '
                                'Page, or Instagram. You must include the '
