@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='whatsapp_business_api',
-    version='0.1',
+    version='0.9',
 
     description='Python client for Meta WhatsApp Business API',
     long_description=readme(),
