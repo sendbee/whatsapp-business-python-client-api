@@ -16,6 +16,7 @@ class GetMessageTemplate(QueryParams):
     fields = 'fields', 'Optional. List of template fields you want returned.'
     limit = 'limit', 'Optional. The maximum number of templates ' \
                      'you want returned in each page of results.'
+    after = 'after', 'Optional. The cursor for the next page of data.'
 
 
 class GetMessageTemplateById(QueryParams):
