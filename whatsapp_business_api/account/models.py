@@ -17,6 +17,8 @@ class Number(Model):
         index='quality_rating', desc='Quality rating')
     _platform_type = TextField(
         index='platform_type', desc='Platform type')
+    _is_on_biz_app = TextField(
+        index='is_on_biz_app', desc='Is on biz app')
     _throughput = TextField(
         index='throughput', desc='Throughput')
     _last_onboarded_time = TextField(
@@ -53,3 +55,9 @@ class RegisterAccount(Model):
     """Data model for register account"""
 
     _success = TextField(index='success', desc='Success')
+
+class SMBInitDataSync(Model):
+    """Data model for SMB init data sync"""
+
+    _messaging_product = TextField(index='messaging_product', desc='Messaging product')
+    _request_id = TextField(index='request_id', desc='Request ID')
