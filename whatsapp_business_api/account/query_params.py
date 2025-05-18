@@ -37,3 +37,9 @@ class ActivatePhoneNumber(QueryParams):
                                'indicating the country where you ' \
                                'want data-at-rest to be stored. ' \
                                'Set this to "DE".'
+
+class SMBInitDataSync(QueryParams):
+    """URL Parameters for initializing SMB data sync"""
+
+    messaging_product = 'messaging_product', 'WhatsApp'
+    sync_type = 'sync_type', 'Type of sync to perform'

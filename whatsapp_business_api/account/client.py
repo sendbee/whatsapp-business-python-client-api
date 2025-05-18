@@ -2,7 +2,7 @@ from whatsapp_business_api import constants
 from whatsapp_business_api.bind import bind_request
 from whatsapp_business_api.account import query_params
 from whatsapp_business_api.account.models import \
-    BusinessAccount, RegisterAccount, Number, WabaAccount
+    BusinessAccount, RegisterAccount, Number, SMBInitDataSync, WabaAccount
 
 
 class Account:
@@ -55,5 +55,16 @@ class Account:
         model=RegisterAccount,
         force_single_model_response=True,
         description='Register WABA phone number',
+        payload_format=constants.RequestConst.PARAMS_URL_ENCODED
+    )
+    
+    smb_init_data_sync = bind_request(
+        method=constants.RequestConst.POST,
+        api_path='/v18.0/<phone_number_id>/smb_app_data',
+        url_parameters=query_params.PhoneNumberId,
+        query_parameters=query_params.SMBInitDataSync,
+        model=SMBInitDataSync,
+        force_single_model_response=True,
+        description='Initialize SMB data sync',
         payload_format=constants.RequestConst.PARAMS_URL_ENCODED
     )
