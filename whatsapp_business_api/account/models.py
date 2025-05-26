@@ -28,7 +28,7 @@ class Number(Model):
 class NumberData(Model):
     """Data model for phone number"""
 
-    _data = ModelField(Number, index='data', desc='WhatsApp ID')
+    _data = ModelField(Number, index='data', desc='Numbers data')
 
 
 class BusinessAccount(Model):

@@ -2,7 +2,8 @@ from whatsapp_business_api import constants
 from whatsapp_business_api.bind import bind_request
 from whatsapp_business_api.account import query_params
 from whatsapp_business_api.account.models import \
-    BusinessAccount, RegisterAccount, Number, SMBInitDataSync, WabaAccount
+    BusinessAccount, RegisterAccount, Number, SMBInitDataSync, WabaAccount, \
+    NumberData
 
 
 class Account:
@@ -38,14 +39,15 @@ class Account:
         payload_format=constants.RequestConst.PARAMS_URL_ENCODED
     )
 
-    # phone_numbers = bind_request(
-    #     method=constants.RequestConst.GET,
-    #     api_path='/v18.0/<account_id>/phone_numbers',
-    #     query_parameters=query_params.AccessToken,
-    #     model=BusinessAccount,
-    #     description='Get Facebook business account phone numbers',
-    #     payload_format=constants.RequestConst.PARAMS_URL_ENCODED
-    # )
+    phone_numbers = bind_request(
+        method=constants.RequestConst.GET,
+        api_path='/v18.0/<account_id>/phone_numbers',
+        query_parameters=query_params.AccountIdMsgIdInURL,
+        model=NumberData,
+        force_single_model_response=True,
+        description='Get Facebook business account phone numbers',
+        payload_format=constants.RequestConst.PARAMS_URL_ENCODED
+    )
 
     register_number = bind_request(
         method=constants.RequestConst.POST,
