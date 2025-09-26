@@ -54,11 +54,11 @@ class Model:
                     # recursion:
                     # if the instance of the field class is ModeClass
                     # run process on that model with only a portion of data
-                    if isinstance(item[property_object.index], list):
+                    if isinstance(item.get(property_object.index), list):
                         models = property_object.model_cls.process(
                             item[property_object.index]
                         )
-                    elif isinstance(item[property_object.index], dict):
+                    elif isinstance(item.get(property_object.index), dict):
                         models = property_object.model_cls.process(
                             [item[property_object.index]]
                         )[0]
