@@ -9,7 +9,7 @@ class Auth:
 
     oauth_token = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/oauth/access_token',
+        api_path=f'/{constants.ApiConst.VERSION}/oauth/access_token',
         query_parameters=query_params.OauthToken,
         model=OauthToken,
         description='Get partner API token',

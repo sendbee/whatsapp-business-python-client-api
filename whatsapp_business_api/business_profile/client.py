@@ -10,7 +10,7 @@ class BusinessProfiles:
 
     whatsapp_business_profile = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<phone_number_id>/whatsapp_business_profile',
+        api_path=f'/{constants.ApiConst.VERSION}/<phone_number_id>/whatsapp_business_profile',
         query_parameters=query_params.BusinessProfileFields,
         model=BusinessProfile,
         force_single_model_response=True,
@@ -20,7 +20,7 @@ class BusinessProfiles:
 
     update_whatsapp_business_profile = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<phone_number_id>/whatsapp_business_profile',
+        api_path=f'/{constants.ApiConst.VERSION}/<phone_number_id>/whatsapp_business_profile',
         url_parameters=query_params.BusinessProfileFields,
         query_parameters=query_params.UpdateBusinessProfileFields,
         model=UpdateBusinessProfileResponse,

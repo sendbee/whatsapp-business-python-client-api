@@ -5,6 +5,11 @@ class SendMessage(QueryParams):
     """Parameters for sending a WhatsApp message"""
 
     destination = 'to', 'Destination phone number'
+    recipient = 'recipient', 'Business-scoped user ID (BSUID) of the ' \
+                             'recipient, e.g. US.13491208655302741918. ' \
+                             'Used instead of "to" when the phone number ' \
+                             'is unknown. If both "to" and "recipient" ' \
+                             'are provided, Meta gives precedence to "to".'
     recipient_type = 'recipient_type', 'Recipient type'
     type = 'type', 'Indicates message type'
     text = 'text', 'Text messages contents'
@@ -27,6 +32,11 @@ class SendTemplateMessage(QueryParams):
     """Parameters for sending a WhatsApp message template"""
 
     destination = 'to', 'Destination phone number'
+    recipient = 'recipient', 'Business-scoped user ID (BSUID) of the ' \
+                             'recipient, e.g. US.13491208655302741918. ' \
+                             'Used instead of "to" when the phone number ' \
+                             'is unknown. If both "to" and "recipient" ' \
+                             'are provided, Meta gives precedence to "to".'
     template = 'template', 'Template data'
 
 

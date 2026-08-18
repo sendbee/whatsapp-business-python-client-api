@@ -9,7 +9,7 @@ class Webhook:
 
     subscribe_app = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<account_id>/subscribed_apps',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/subscribed_apps',
         query_parameters=query_params.AccountIdInURL,
         url_parameters=query_params.AccountIdInURL,
         model=Success,
@@ -20,7 +20,7 @@ class Webhook:
 
     list_subscribed_apps = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>/subscribed_apps',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/subscribed_apps',
         query_parameters=query_params.AccountIdInURL,
         model=Apps,
         force_single_model_response=True,

@@ -10,7 +10,7 @@ class Upload:
 
     create_upload_session = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<account_id>/uploads',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/uploads',
         url_parameters=query_params.UploadSession,
         model=UploadSession,
         description='Start upload session',
@@ -20,7 +20,7 @@ class Upload:
 
     upload_file = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<upload_session_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<upload_session_id>',
         url_parameters=query_params.UploadFile,
         file_parameters=query_params.UploadTemplateMediaFile,
         file_to_data_parameter='file',
@@ -34,7 +34,7 @@ class Upload:
 
     get_media = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<media_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<media_id>',
         model=MediaFile,
         force_single_model_response=True,
         query_parameters=query_params.MediaIdInURL,

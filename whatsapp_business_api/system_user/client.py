@@ -9,7 +9,7 @@ class SystemUsers:
 
     add_system_user = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<waba_id>/assigned_users',
+        api_path=f'/{constants.ApiConst.VERSION}/<waba_id>/assigned_users',
         url_parameters=query_params.WabaIDInUrl,
         query_parameters=query_params.AssignUserRequest,
         model=Response,

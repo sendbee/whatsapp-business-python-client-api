@@ -13,6 +13,11 @@ class Contact(Model):
         index='wa_id', desc='WhatsApp ID of the customer who the message '
                             'was sent to. This may not match input.'
     )
+    _user_id = TextField(
+        index='user_id', desc='Business-scoped user ID of the customer. '
+                              'Present when the message was sent to a BSUID; '
+                              'wa_id is omitted in that case.'
+    )
 
 
 class Message(Model):

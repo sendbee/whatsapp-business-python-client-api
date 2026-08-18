@@ -11,7 +11,7 @@ class Account:
 
     business_account = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>',
         query_parameters=query_params.AccountFields,
         model=BusinessAccount,
         force_single_model_response=True,
@@ -21,7 +21,7 @@ class Account:
 
     waba_details = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>',
         query_parameters=query_params.AccountFields,
         model=WabaAccount,
         description='Get WABA account',
@@ -31,7 +31,7 @@ class Account:
 
     number_details = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>',
         query_parameters=query_params.AccountFields,
         model=Number,
         force_single_model_response=True,
@@ -41,7 +41,7 @@ class Account:
 
     phone_numbers = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>/phone_numbers',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/phone_numbers',
         query_parameters=query_params.AccountIdMsgIdInURL,
         model=NumberData,
         force_single_model_response=True,
@@ -51,7 +51,7 @@ class Account:
 
     register_number = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<phone_number_id>/register',
+        api_path=f'/{constants.ApiConst.VERSION}/<phone_number_id>/register',
         url_parameters=query_params.PhoneNumberId,
         query_parameters=query_params.ActivatePhoneNumber,
         model=RegisterAccount,
@@ -62,7 +62,7 @@ class Account:
     
     smb_init_data_sync = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<phone_number_id>/smb_app_data',
+        api_path=f'/{constants.ApiConst.VERSION}/<phone_number_id>/smb_app_data',
         url_parameters=query_params.PhoneNumberId,
         query_parameters=query_params.SMBInitDataSync,
         model=SMBInitDataSync,

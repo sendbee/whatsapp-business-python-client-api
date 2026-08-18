@@ -10,7 +10,7 @@ class Messaging:
 
     send_message = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<app_id>/messages',
+        api_path=f'/{constants.ApiConst.VERSION}/<app_id>/messages',
         model=SendMessageResponse,
         force_single_model_response=True,
         url_parameters=query_params.AppIdMsgIdInURL,
@@ -23,7 +23,7 @@ class Messaging:
 
     send_template_message = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<app_id>/messages',
+        api_path=f'/{constants.ApiConst.VERSION}/<app_id>/messages',
         model=SendMessageResponse,
         force_single_model_response=True,
         url_parameters=query_params.AppIdMsgIdInURL,
@@ -36,7 +36,7 @@ class Messaging:
 
     message_status = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<phone_number_id>/messages',
+        api_path=f'/{constants.ApiConst.VERSION}/<phone_number_id>/messages',
         model=ChangeMessageStatus,
         force_single_model_response=True,
         url_parameters=query_params.PhoneNumberIdInURL,
