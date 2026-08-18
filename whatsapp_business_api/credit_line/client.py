@@ -9,7 +9,7 @@ class CreditLine:
 
     extended_credits = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<business_id>/extendedcredits',
+        api_path=f'/{constants.ApiConst.VERSION}/<business_id>/extendedcredits',
         query_parameters=query_params.ExtendedCredits,
         model=ExtendedCredit,
         force_single_model_response=True,
@@ -19,7 +19,7 @@ class CreditLine:
 
     add_credit_line = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<extended_credit_id>/whatsapp_credit_sharing_and_attach',
+        api_path=f'/{constants.ApiConst.VERSION}/<extended_credit_id>/whatsapp_credit_sharing_and_attach',
         url_parameters=query_params.ExtendedCreditId,
         query_parameters=query_params.ExtendedCredits,
         model=ExtendedCredit,

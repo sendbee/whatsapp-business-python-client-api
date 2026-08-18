@@ -12,6 +12,12 @@ class Const(metaclass=ConstMeta):
     __slots__ = ()
 
 
+class ApiConst(Const):
+    """Graph API constants"""
+
+    VERSION = 'v23.0'
+
+
 class RequestConst(Const):
     GET = 'GET'
     POST = 'POST'

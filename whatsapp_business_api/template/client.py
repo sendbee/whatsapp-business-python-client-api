@@ -11,7 +11,7 @@ class Template:
 
     get_message_templates = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<account_id>/message_templates',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/message_templates',
         query_parameters=query_params.GetMessageTemplate,
         model=MessageTemplateList,
         description='Get message templates',
@@ -21,7 +21,7 @@ class Template:
 
     get_message_template_by_id = bind_request(
         method=constants.RequestConst.GET,
-        api_path='/v18.0/<template_id>',
+        api_path=f'/{constants.ApiConst.VERSION}/<template_id>',
         query_parameters=query_params.GetMessageTemplateById,
         model=MessageTemplate,
         description='Get message template by id',
@@ -31,7 +31,7 @@ class Template:
 
     create_message_templates = bind_request(
         method=constants.RequestConst.POST,
-        api_path='/v18.0/<account_id>/message_templates',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/message_templates',
         query_parameters=query_params.CreateMessageTemplate,
         url_parameters=query_params.AccountIdInURL,
         model=CreatedMessageTemplate,
@@ -42,7 +42,7 @@ class Template:
 
     delete_message_templates = bind_request(
         method=constants.RequestConst.DELETE,
-        api_path='/v18.0/<account_id>/message_templates',
+        api_path=f'/{constants.ApiConst.VERSION}/<account_id>/message_templates',
         query_parameters=query_params.DeleteMessageTemplate,
         url_parameters=query_params.AccountIdInURL,
         model=DeletedMessageTemplate,

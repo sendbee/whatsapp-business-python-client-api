@@ -35,8 +35,11 @@ class ActivatePhoneNumber(QueryParams):
     pin = 'pin', '2FA one time code'
     data_localization_region = 'Data_localization_region', \
                                'indicating the country where you ' \
-                               'want data-at-rest to be stored. ' \
-                               'Set this to "DE".'
+                               'want data-at-rest to be stored, e.g. "DE". ' \
+                               'No longer accepted by Graph API v21.0+: ' \
+                               'enable local storage via the Settings API ' \
+                               'while the number is unregistered, ' \
+                               'then register.'
 
 class SMBInitDataSync(QueryParams):
     """URL Parameters for initializing SMB data sync"""
