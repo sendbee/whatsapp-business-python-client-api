@@ -5,6 +5,7 @@ class AccountIdMsgIdInURL(QueryParams):
     """URL Parameters for account_id in url"""
 
     account_id = 'account_id', 'Facebook account ID'
+    fields = 'fields', 'Response fields'
 
 
 class AccountFields(QueryParams):

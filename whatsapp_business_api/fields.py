@@ -89,8 +89,15 @@ class JsonField(Field):
 class BooleanField(Field):
     """Converting item to boolean."""
 
+    FALSE_VALUES = ('false', '0', 'no', '')
+
     def _convert_field_item(self, data, **kwargs):
         """Actual converting."""
+
+        # the API normally sends real JSON booleans, but a string 'false'
+        # would otherwise come back as True
+        if isinstance(data, str):
+            return data.strip().lower() not in self.FALSE_VALUES
 
         return bool(data)
 
