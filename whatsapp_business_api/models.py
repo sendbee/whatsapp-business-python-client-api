@@ -51,6 +51,11 @@ class Model:
 
                 if isinstance(property_object, ModelField):
 
+                    # absent nested models resolve to None, the same way an
+                    # absent Field does - without this the setattr below
+                    # raises UnboundLocalError when the key is missing
+                    models = None
+
                     # recursion:
                     # if the instance of the field class is ModeClass
                     # run process on that model with only a portion of data

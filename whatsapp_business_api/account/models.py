@@ -1,5 +1,6 @@
 from whatsapp_business_api.models import Model
-from whatsapp_business_api.fields import TextField, ModelField, JsonField
+from whatsapp_business_api.fields import TextField, ModelField, JsonField, \
+    BooleanField
 
 
 class Number(Model):
@@ -17,7 +18,7 @@ class Number(Model):
         index='quality_rating', desc='Quality rating')
     _platform_type = TextField(
         index='platform_type', desc='Platform type')
-    _is_on_biz_app = TextField(
+    _is_on_biz_app = BooleanField(
         index='is_on_biz_app', desc='Is on biz app')
     _throughput = TextField(
         index='throughput', desc='Throughput')
